@@ -141,9 +141,7 @@ export const ItemComponent = ({
     <div className="flex justify-start">
       {typeof price === 'number' && !isNaN(price) ? (
         <span className="font-medium text-gray-900">${price.toFixed(2)}</span>
-      ) : (
-        <span className="text-gray-500">''</span>
-      )}
+      ) : null}
     </div>
     <Button size="sm" onClick={() => addToCart(id)}>
       Add to cart
