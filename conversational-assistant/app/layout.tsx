@@ -14,7 +14,7 @@ const geistMono = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'Convex',
+  title: 'Conversational Assistant',
   description: 'Structured Outputs demo',
   icons: {
     icon: '/imgs/convex_icon.svg'
