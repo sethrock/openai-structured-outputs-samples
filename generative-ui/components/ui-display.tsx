@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
 import { getComponent } from '@/lib/components-mapping'
 import { Braces, X } from 'lucide-react'
@@ -19,6 +19,12 @@ const UIDisplay: React.FC<FunctionCallProps> = ({
   const toggleShowJSON = () => {
     setShowJSON(!showJSON)
   }
+
+  const endRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    endRef.current?.scrollIntoView({ behavior: 'instant' })
+  }, [functionCall])
 
   return (
     <div className="flex justify-center items-center overflow-y-scroll rounded-lg px-8 py-2 h-full w-full">
@@ -66,6 +72,7 @@ const UIDisplay: React.FC<FunctionCallProps> = ({
                 >
                   {getComponent(functionCall.parsedArguments.component) ?? null}
                 </div>
+                <div ref={endRef} />
               </div>
             </div>
           )
