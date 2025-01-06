@@ -6,7 +6,7 @@ This simple demo app showcases how to build deterministic interfaces by using St
 
 As an example, the app extracts key details from PDF resumes.
 
-![Resume Extraction Demo](https://openaiassets.blob.core.windows.net/$web/API/sample_apps/resume-extraction-demo.gif)
+![Resume Extraction Demo](https://cdn.openai.com/API/sample_apps/resume-extraction-demo.gif)
 
 ## Features
 
@@ -55,6 +55,6 @@ To test the app, you can either upload a PDF resume or use the [example resume](
 
 You can then see the extracted fields stream in the UI. To see the full JSON response, toggle the JSON view by clicking on the "{}" icon in the top right.
 
-![Resume Extraction Streaming Response](https://openaiassets.blob.core.windows.net/$web/API/sample_apps/resume-extraction-streaming-response.gif)
+![Resume Extraction Streaming Response](https://cdn.openai.com/API/sample_apps/resume-extraction-streaming-response.gif)
 
 To update the fields extracted by the model, you can edit the zod schema in `lib/resume.ts` file.
