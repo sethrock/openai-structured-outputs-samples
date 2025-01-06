@@ -43,15 +43,27 @@ const MainInterface: React.FC = () => {
       // Accumulate arguments
       setFunctionArguments(prev => prev + eventData.arguments)
 
-      // Update function call state incrementally
-      setFunctionCall({
-        type: 'function_call',
-        status: 'in_progress',
-        id: eventData.callId,
-        name: eventData.name,
-        arguments: functionArguments,
-        parsedArguments: {},
-        output: null
+      // If functionCall doesn't exist, create it, otherwise update it
+      setFunctionCall(prev => {
+        if (!prev) {
+          return {
+            type: 'function_call',
+            status: 'in_progress',
+            id: eventData.callId,
+            name: eventData.name,
+            arguments: eventData.arguments,
+            parsedArguments: {},
+            output: null
+          }
+        } else {
+          return {
+            ...prev,
+            status: 'in_progress',
+            name: eventData.name,
+            id: eventData.callId,
+            arguments: prev.arguments + eventData.arguments
+          }
+        }
       })
     } else if (eventType === 'function_arguments_done') {
       setFunctionArguments(eventData.arguments)
@@ -94,7 +106,7 @@ const MainInterface: React.FC = () => {
         </div>
       </div>
       <div className="h-[75vh] w-full bg-gray-50 rounded-t-lg shadow-md md:w-2/3 flex justify-center items-center">
-        {functionCall && <UIDisplay functionCall={functionCall} />}
+        <UIDisplay functionCall={functionCall} />
       </div>
     </div>
   )
