@@ -35,10 +35,10 @@ As an example, the app extracts key details from PDF resumes.
    export OPENAI_API_KEY=your-api-key
    ```
 
-   Or create a `.env` file in the `resumer-extraction` folder containing:
+   Or create a `.env` file in the `resume-extraction` folder containing:
 
    ```bash
-   OPENAI_API_KEY=your-api-key
+   OPENAI_API_KEY=<your-api-key>
    ```
 
 4. Run the demo
