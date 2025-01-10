@@ -38,10 +38,10 @@ It also showcases how to do generative UI, using Structured Outputs to reliably 
    export OPENAI_API_KEY=your-api-key
    ```
 
-   Or create a `.env` file in the `resumer-extraction` folder containing:
+   Or create a `.env` file in the `conversational-assistant` folder containing:
 
    ```bash
-   OPENAI_API_KEY=your-api-key
+   OPENAI_API_KEY=<your-api-key>
    ```
 
 4. Run the demo
