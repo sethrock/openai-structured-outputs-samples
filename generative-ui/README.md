@@ -34,10 +34,10 @@ This simple demo app showcases how to generate UI dynamically based on a user in
    export OPENAI_API_KEY=your-api-key
    ```
 
-   Or create a `.env` file in the `resumer-extraction` folder containing:
+   Or create a `.env` file in the `generative-ui` folder containing:
 
    ```bash
-   OPENAI_API_KEY=your-api-key
+   OPENAI_API_KEY=<your-api-key>
    ```
 
 4. Run the demo
