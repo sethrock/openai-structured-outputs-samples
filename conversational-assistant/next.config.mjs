@@ -11,10 +11,7 @@ const nextConfig = {
     ],
   },
   // Required for Replit hosting
-  output: 'standalone',
-  experimental: {
-    serverActions: true
-  }
+  output: 'standalone'
 };
 
 export default nextConfig;
