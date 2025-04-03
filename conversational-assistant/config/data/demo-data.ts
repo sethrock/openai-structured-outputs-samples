@@ -1,4 +1,3 @@
-
 // Placeholder demo data - used in the API routes
 
 import { Service, ServiceDetails, Booking } from './types'
@@ -9,7 +8,7 @@ export const services: Service[] = [
     name: '1 Hour Service',
     price: 1000.0,
     description: 'Standard 1-hour service package perfect for basic needs.',
-    image: 'service.jpg',
+    image: '/imgs/service.jpg',
     duration: 1
   },
   {
@@ -17,7 +16,7 @@ export const services: Service[] = [
     name: '1.5 Hour Service',
     price: 1600.0,
     description: 'Extended 1.5-hour service package for comprehensive coverage.',
-    image: 'service.jpg',
+    image: '/imgs/service.jpg',
     duration: 1.5
   },
   {
@@ -25,7 +24,7 @@ export const services: Service[] = [
     name: '2 Hour Service',
     price: 2200.0,
     description: 'Complete 2-hour service package for detailed attention.',
-    image: 'service.jpg',
+    image: '/imgs/service.jpg',
     duration: 2
   },
   {
@@ -33,7 +32,7 @@ export const services: Service[] = [
     name: '3 Hour Service',
     price: 3000.0,
     description: 'Premium 3-hour service package for extensive requirements.',
-    image: 'service.jpg',
+    image: '/imgs/service.jpg',
     duration: 3
   },
   {
@@ -41,7 +40,7 @@ export const services: Service[] = [
     name: '4 Hour Service',
     price: 4000.0,
     description: 'Ultimate 4-hour service package for maximum coverage.',
-    image: 'service.jpg',
+    image: '/imgs/service.jpg',
     duration: 4
   }
 ]
