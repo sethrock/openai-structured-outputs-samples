@@ -126,21 +126,24 @@ export const ItemComponent = ({
   price: number
   duration?: number
 }) => (
-  <div className="flex flex-col items-center p-4 border rounded-lg w-72 min-w-72 bg-white">
-    <Image
-      src={primary_image || '/imgs/service.jpg'}
-      alt={`${item_name || 'Service'} image`}
-      width={200}
-      height={200}
-      className="mb-4 rounded-md object-cover"
-    />
+  <div 
+    className="flex flex-col items-center p-4 border rounded-lg w-72 min-w-72 h-[400px] relative overflow-hidden"
+    style={{
+      backgroundImage: `url(${primary_image || '/imgs/service.jpg'})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    }}
+  >
+    <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div className="relative z-10 flex flex-col items-center text-white">
     <h3 className="text-lg font-semibold mb-2">{item_name}</h3>
     <p className="text-sm text-gray-600 mb-2">{duration} Hour Service</p>
     <p className="text-sm text-gray-600 mb-4 text-center">{description}</p>
     <p className="text-lg font-bold">${price}</p>
-    <Button onClick={() => addToCart(id)} className="mt-4">
-      Book Now
-    </Button>
+      <Button onClick={() => addToCart(id)} className="mt-4 bg-white text-black hover:bg-gray-200">
+        Book Now
+      </Button>
+    </div>
   </div>
 )
 
