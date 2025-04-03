@@ -21,3 +21,5 @@ externalPort = 80
 
 [deployment]
 deploymentTarget = "cloudrun"
+run = ["sh", "-c", "cd conversational-assistant && npm start"]
+build = ["sh", "-c", "cd conversational-assistant && npm run build"]
