@@ -7,12 +7,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'res.cloudinary.com',
         pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'res.cloud',
-        pathname: '/**',
-      },
+      }
     ],
   },
   // Required for Replit hosting
@@ -23,8 +18,7 @@ const nextConfig = {
   },
   experimental: {
     serverMinification: false
-  },
-  webSocketServerPort: 5000
+  }
 };
 
 export default nextConfig;

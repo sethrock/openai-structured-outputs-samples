@@ -1,11 +1,11 @@
 primary_image && (
       <div className="relative w-full">
         <img
-          src={primary_image}
-          alt={item_name || "Product image"}
-          className="w-full h-auto mb-4 rounded-lg"
+          src={primary_image || '/imgs/service.jpg'}
+          alt={item_name || 'Service image'}
+          className="w-full h-auto mb-4 rounded-lg object-cover"
           onError={(e) => {
-            e.currentTarget.src = "/imgs/service.jpg";
+            e.currentTarget.src = '/imgs/service.jpg';
           }}
         />
       </div>
