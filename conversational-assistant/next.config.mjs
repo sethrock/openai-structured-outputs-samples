@@ -9,6 +9,11 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+  },
+  // Required for Replit hosting
+  output: 'standalone',
+  experimental: {
+    serverActions: true
   }
 };
 
