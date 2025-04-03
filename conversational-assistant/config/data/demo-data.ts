@@ -4,14 +4,6 @@ import { Service, ServiceDetails, Booking } from './types'
 
 export const services: Service[] = [
   {
-    id: 'event-naked-sushi',
-    name: 'Naked Sushi Event',
-    price: 8000.0,
-    description: 'Ultimate 5-hour premium Naked Sushi event experience for an unforgettable gathering.',
-    image: '/imgs/service.jpg',
-    duration: 5
-  },
-  {
     id: 'service-1hr',
     name: '1 Hour Service',
     price: 1000.0,
@@ -50,6 +42,14 @@ export const services: Service[] = [
     description: 'Ultimate 4-hour service package for maximum coverage.',
     image: '/imgs/service.jpg',
     duration: 4
+  },
+  {
+    id: 'event-naked-sushi',
+    name: 'Naked Sushi Event',
+    price: 8000.0,
+    description: 'Ultimate 5-hour premium Naked Sushi event experience for an unforgettable gathering.',
+    video: 'https://res.cloudinary.com/dq2wjozdk/video/upload/v1742000626/Naked_Sushi_-540p30_gxtv7r.mov',
+    duration: 5
   }
 ]
 
