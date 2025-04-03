@@ -18,15 +18,6 @@ const nextConfig = {
   },
   experimental: {
     serverMinification: false
-  },
-  // Ensure proper host binding
-  async rewrites() {
-    return [];
-  },
-  // Server configuration
-  server: {
-    hostname: '0.0.0.0',
-    port: 5000
   }
 };
 
