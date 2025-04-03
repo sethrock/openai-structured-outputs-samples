@@ -8,7 +8,7 @@ export const services: Service[] = [
     name: '1 Hour Service',
     price: 1000.0,
     description: 'Standard 1-hour service package perfect for basic needs.',
-    image: 'https://res.cloudinary.com/dq2wjozdk/image/upload/v1726579942/IMG_4466_2_y9ge5u.png',
+    image: '/imgs/service.jpg',
     duration: 1
   },
   {
@@ -16,7 +16,7 @@ export const services: Service[] = [
     name: '1.5 Hour Service',
     price: 1600.0,
     description: 'Extended 1.5-hour service package for comprehensive coverage.',
-    image: 'https://res.cloudinary.com/dq2wjozdk/image/upload/v1726579942/IMG_4466_2_y9ge5u.png',
+    image: '/imgs/service.jpg',
     duration: 1.5
   },
   {
@@ -24,7 +24,7 @@ export const services: Service[] = [
     name: '2 Hour Service',
     price: 2200.0,
     description: 'Complete 2-hour service package for detailed attention.',
-    image: 'https://res.cloudinary.com/dq2wjozdk/image/upload/v1726579942/IMG_4466_2_y9ge5u.png',
+    image: '/imgs/service.jpg',
     duration: 2
   },
   {
@@ -32,7 +32,7 @@ export const services: Service[] = [
     name: '3 Hour Service',
     price: 3000.0,
     description: 'Premium 3-hour service package for extensive requirements.',
-    image: 'https://res.cloudinary.com/dq2wjozdk/image/upload/v1726579942/IMG_4466_2_y9ge5u.png',
+    image: '/imgs/service.jpg',
     duration: 3
   },
   {
@@ -40,7 +40,7 @@ export const services: Service[] = [
     name: '4 Hour Service',
     price: 4000.0,
     description: 'Ultimate 4-hour service package for maximum coverage.',
-    image: 'https://res.cloudinary.com/dq2wjozdk/image/upload/v1726579942/IMG_4466_2_y9ge5u.png',
+    image: '/imgs/service.jpg',
     duration: 4
   },
   {
