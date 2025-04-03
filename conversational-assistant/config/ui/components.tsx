@@ -124,12 +124,12 @@ export const ItemComponent = ({
   primary_image: string
   description: string
   price: number
-  duration: number
+  duration?: number
 }) => (
   <div className="flex flex-col items-center p-4 border rounded-lg w-72 min-w-72 bg-white">
     <Image
-      src={primary_image}
-      alt={`${item_name} service image`}
+      src={primary_image || '/imgs/service.jpg'}
+      alt={`${item_name || 'Service'} image`}
       width={200}
       height={200}
       className="mb-4 rounded-md object-cover"
