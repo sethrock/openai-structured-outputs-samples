@@ -1,30 +1,30 @@
-export interface Product {
+
+export interface Service {
   id: string
   name: string
   price: number
   description: string
   image: string
-  weight: number
-  dimensions: string
+  duration: number
 }
 
-export interface ProductDetails {
+export interface ServiceDetails {
   id: string
   features: string[]
-  warranty: string
+  cancellation_policy: string
   ratings: number
-  release_date: string
+  available_from: string
 }
 
-export interface OrderItem {
-  product: Product
+export interface BookingItem {
+  service: Service
   quantity: number
 }
 
-export interface Order {
+export interface Booking {
   id: string
-  items: OrderItem[]
-  status: 'pending' | 'shipped' | 'delivered' | 'cancelled' | 'returned'
+  items: BookingItem[]
+  status: 'pending' | 'confirmed' | 'completed' | 'cancelled' | 'rescheduled'
   created_at: string
   total: number
 }

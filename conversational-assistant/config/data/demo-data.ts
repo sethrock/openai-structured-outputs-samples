@@ -1,98 +1,111 @@
+
 // Placeholder demo data - used in the API routes
 
-import { Order, Product, ProductDetails } from './types'
+import { Service, ServiceDetails, Booking } from './types'
 
-export const products: Product[] = [
+export const services: Service[] = [
   {
-    id: 'qt-24X553',
-    name: 'AI-Titan Quantum Processor',
-    price: 1590.0,
-    description:
-      "The AI-Titan Quantum Processor is engineered for next-generation artificial intelligence tasks. Featuring 256 quantum cores and neural acceleration, it's the ideal choice for cutting-edge AI models.",
-    image: 'qt-24X553.webp',
-    weight: 0.6,
-    dimensions: '12cm x 10cm x 2cm'
+    id: 'service-1hr',
+    name: '1 Hour Service',
+    price: 1000.0,
+    description: 'Standard 1-hour service package perfect for basic needs.',
+    image: 'service.jpg',
+    duration: 1
   },
   {
-    id: 'mb-NE9000',
-    name: 'Neuronix-9000 AI Motherboard',
-    price: 1199.99,
-    description:
-      'A state-of-the-art AI-focused motherboard featuring integrated neural networking, 12 PCIe 5.0 slots, and optimized heat dissipation for long training cycles.',
-    image: 'mb-NE9000.webp',
-    weight: 1.8,
-    dimensions: '30cm x 25cm x 3cm'
+    id: 'service-15hr',
+    name: '1.5 Hour Service',
+    price: 1600.0,
+    description: 'Extended 1.5-hour service package for comprehensive coverage.',
+    image: 'service.jpg',
+    duration: 1.5
   },
   {
-    id: 'acc-MLC82',
-    name: 'HyperSynapse ML Accelerator Chip',
-    price: 799.99,
-    description:
-      'Boost your AI training speeds with the HyperSynapse ML Accelerator Chip. It offers lightning-fast matrix computations and supports multi-GPU integrations.',
-    image: 'acc-MLC82.webp',
-    weight: 0.2,
-    dimensions: '5cm x 5cm x 1cm'
+    id: 'service-2hr',
+    name: '2 Hour Service',
+    price: 2200.0,
+    description: 'Complete 2-hour service package for detailed attention.',
+    image: 'service.jpg',
+    duration: 2
   },
   {
-    id: 'cl-CE7902',
-    name: 'CryoEngine Cooling Module',
-    price: 499.99,
-    description:
-      'A state-of-the-art liquid-cooling system designed specifically for AI hardware. Keep your CPUs, GPUs, and motherboards running at peak efficiency during extended training sessions.',
-    image: 'cl-CE7902.webp',
-    weight: 2.0,
-    dimensions: '25cm x 20cm x 10cm'
+    id: 'service-3hr',
+    name: '3 Hour Service',
+    price: 3000.0,
+    description: 'Premium 3-hour service package for extensive requirements.',
+    image: 'service.jpg',
+    duration: 3
+  },
+  {
+    id: 'service-4hr',
+    name: '4 Hour Service',
+    price: 4000.0,
+    description: 'Ultimate 4-hour service package for maximum coverage.',
+    image: 'service.jpg',
+    duration: 4
   }
 ]
 
-export const productDetails: ProductDetails[] = [
+export const serviceDetails: ServiceDetails[] = [
   {
-    id: 'qt-24X553',
+    id: 'service-1hr',
     features: [
-      '256 Quantum Cores',
-      'Neural Acceleration Technology',
-      'Energy Efficient Design',
-      'Optimized for AI Workloads'
+      '1 Hour Duration',
+      'Standard Service Package',
+      'Basic Coverage',
+      'Single Session'
     ],
-    warranty: '3 years limited warranty',
+    cancellation_policy: '24 hours notice required',
     ratings: 4.8,
-    release_date: '2024-01-15'
+    available_from: '2024-01-15'
   },
   {
-    id: 'mb-NE9000',
+    id: 'service-15hr',
     features: [
-      'Integrated Neural Networking',
-      '12 PCIe 5.0 Slots',
-      'Optimized Heat Dissipation',
-      'Supports AI Training Hardware'
+      '1.5 Hour Duration',
+      'Extended Service Package',
+      'Comprehensive Coverage',
+      'Single Session'
     ],
-    warranty: '3 years limited warranty',
+    cancellation_policy: '24 hours notice required',
     ratings: 4.7,
-    release_date: '2024-08-02'
+    available_from: '2024-01-15'
   },
   {
-    id: 'acc-MLC82',
+    id: 'service-2hr',
     features: [
-      'Lightning-Fast Matrix Computations',
-      'Multi-GPU Integration Support',
-      'Compact and Efficient Design',
-      'Optimized for Machine Learning'
+      '2 Hour Duration',
+      'Complete Service Package',
+      'Detailed Coverage',
+      'Single Session'
     ],
-    warranty: '2 years limited warranty',
-    ratings: 4.6,
-    release_date: '2024-03-05'
+    cancellation_policy: '48 hours notice required',
+    ratings: 4.9,
+    available_from: '2024-01-15'
   },
   {
-    id: 'cl-CE7902',
+    id: 'service-3hr',
     features: [
-      'Advanced Liquid Cooling System',
-      'High Efficiency Thermal Management',
-      'Supports CPUs and GPUs',
-      'Quiet and Durable Operation'
+      '3 Hour Duration',
+      'Premium Service Package',
+      'Extensive Coverage',
+      'Single Session'
     ],
-    warranty: '3 years limited warranty',
-    ratings: 4.5,
-    release_date: '2024-04-04'
+    cancellation_policy: '48 hours notice required',
+    ratings: 4.8,
+    available_from: '2024-01-15'
+  },
+  {
+    id: 'service-4hr',
+    features: [
+      '4 Hour Duration',
+      'Ultimate Service Package',
+      'Maximum Coverage',
+      'Single Session'
+    ],
+    cancellation_policy: '72 hours notice required',
+    ratings: 4.9,
+    available_from: '2024-01-15'
   }
 ]
 
@@ -101,45 +114,29 @@ const daysAgo = (days: number) => {
   return date.toLocaleDateString()
 }
 
-export const orders: Order[] = [
+export const bookings: Booking[] = [
   {
-    id: 'CX2312',
+    id: 'BK2312',
     items: [
       {
-        product: products[0],
-        quantity: 1
-      },
-      {
-        product: products[2],
+        service: services[0],
         quantity: 1
       }
     ],
-    status: 'delivered',
+    status: 'completed',
     created_at: daysAgo(4),
-    total: 2389.99
+    total: 1000.0
   },
   {
-    id: 'CYE223',
+    id: 'BK2313',
     items: [
       {
-        product: products[1],
+        service: services[2],
         quantity: 1
       }
     ],
-    status: 'cancelled',
-    created_at: daysAgo(18),
-    total: 1199.99
-  },
-  {
-    id: 'EB2134',
-    items: [
-      {
-        product: products[3],
-        quantity: 2
-      }
-    ],
-    status: 'delivered',
-    created_at: daysAgo(42),
-    total: 999.98
+    status: 'pending',
+    created_at: daysAgo(2),
+    total: 2200.0
   }
 ]
