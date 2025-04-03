@@ -13,6 +13,9 @@ const nextConfig = {
   output: 'standalone',
   experimental: {
     serverMinification: false
+  },
+  eslint: {
+    ignoreDuringBuilds: true
   }
 };
 

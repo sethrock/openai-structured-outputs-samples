@@ -1,4 +1,9 @@
-primary_image && (
+interface ImageProps {
+  primary_image?: string;
+  item_name?: string;
+}
+
+export const ProductImage = ({ primary_image, item_name }: ImageProps) => primary_image ? (
       <div className="relative w-full">
         <img
           src={primary_image.startsWith('http') ? primary_image : '/imgs/service.jpg'}
