@@ -61,7 +61,7 @@ const Chat: React.FC<ChatProps> = ({ items, onSendMessage }) => {
                         if (e.key === 'Enter' && !e.shiftKey) {
                           e.preventDefault()
                           if (inputMessageText.trim()) {
-                            onSendMessage(inputMessageText.trim())
+                            onSendMessage(inputMessageText)
                             setinputMessageText('')
                           }
                         }
@@ -73,8 +73,10 @@ const Chat: React.FC<ChatProps> = ({ items, onSendMessage }) => {
                     data-testid="send-button"
                     className="flex size-8 items-center justify-center rounded-full bg-black text-white transition-colors hover:opacity-70 focus-visible:outline-none focus-visible:outline-black disabled:bg-[#D7D7D7] disabled:text-[#f4f4f4] disabled:hover:opacity-100"
                     onClick={() => {
-                      onSendMessage(inputMessageText)
-                      setinputMessageText('')
+                      if (inputMessageText.trim()) {
+                        onSendMessage(inputMessageText)
+                        setinputMessageText('')
+                      }
                     }}
                   >
                     <svg
