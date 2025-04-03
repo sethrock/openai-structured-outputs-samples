@@ -16,7 +16,15 @@ const nextConfig = {
     ],
   },
   // Required for Replit hosting
-  output: 'standalone'
+  output: 'standalone',
+  // Configure server
+  webpack: (config) => {
+    return config
+  },
+  experimental: {
+    serverMinification: false
+  },
+  webSocketServerPort: 5000
 };
 
 export default nextConfig;
