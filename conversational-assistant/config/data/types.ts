@@ -19,8 +19,11 @@ export interface ServiceDetails {
 
 export interface Booking {
   id: string
-  service_id: string
-  date: string
+  items: Array<{
+    service: Service
+    quantity: number
+  }>
   status: string
+  created_at: string
   total: number
 }
