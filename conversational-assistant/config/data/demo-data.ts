@@ -40,7 +40,7 @@ export const services: Service[] = [
     name: '4 Hour Service',
     price: 4000.0,
     description: 'Ultimate 4-hour service package for maximum coverage.',
-    image: '/imgs/service.jpg',
+    image: 'https://res.cloudinary.com/dq2wjozdk/image/upload/v1743680377/service_4hr.jpg',
     duration: 4
   },
   {
