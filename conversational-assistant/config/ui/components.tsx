@@ -15,6 +15,8 @@ import { ChartConfig, ChartContainer } from '@/components/ui/chart'
 import { getComponent } from '@/lib/components-mapping'
 import { addToCart, selectOrder } from '@/config/user-actions'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image';
+
 
 const formatKey = (key: string) =>
   key.toLowerCase().replace(/[^a-zA-Z0-9]/g, '_')
@@ -114,37 +116,30 @@ export const ItemComponent = ({
   item_name,
   primary_image,
   description,
-  price
-}: any) => (
-  <div className="flex flex-col mb-3 gap-2 justify-between border border-gray-200 bg-gray-50 p-4 rounded-lg flex-shrink-0 w-52 h-96 overflow-x-auto">
-    <div className="flex flex-col">
-      <div className="aspect-h-1 aspect-w-1 rounded-lg overflow-hidden text-center h-48">
-        {primary_image && primary_image.match(/\.(jpeg|jpg|gif|png|webp)$/) ? (
-          <img
-            src={`/imgs/${primary_image}`}
-            alt={item_name || 'Product Image'}
-            className="w-full h-auto object-cover object-center rounded-lg"
-          />
-        ) : (
-          <div className="animate-pulse bg-gray-200 h-full w-full rounded-lg"></div>
-        )}
-      </div>
-      <div className="flex flex-col gap-1 justify-start">
-        <h3 className="text-sm font-semibold text-gray-700 line-clamp-2">
-          {item_name ?? ''}
-        </h3>
-        <p className="text-xs text-gray-500 line-clamp-3">
-          {description ?? ''}
-        </p>
-      </div>
-    </div>
-    <div className="flex justify-start">
-      {typeof price === 'number' && !isNaN(price) ? (
-        <span className="font-medium text-gray-900">${price.toFixed(2)}</span>
-      ) : null}
-    </div>
-    <Button size="sm" onClick={() => addToCart(id)}>
-      Add to cart
+  price,
+  duration
+}: {
+  id: string
+  item_name: string
+  primary_image: string
+  description: string
+  price: number
+  duration: number
+}) => (
+  <div className="flex flex-col items-center p-4 border rounded-lg w-72 min-w-72 bg-white">
+    <Image
+      src={primary_image}
+      alt={item_name}
+      width={200}
+      height={200}
+      className="mb-4 rounded-md object-cover"
+    />
+    <h3 className="text-lg font-semibold mb-2">{item_name}</h3>
+    <p className="text-sm text-gray-600 mb-2">{duration} Hour Service</p>
+    <p className="text-sm text-gray-600 mb-4 text-center">{description}</p>
+    <p className="text-lg font-bold">${price}</p>
+    <Button onClick={() => addToCart(id)} className="mt-4">
+      Book Now
     </Button>
   </div>
 )
