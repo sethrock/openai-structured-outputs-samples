@@ -77,8 +77,8 @@ export const add_to_cart = ({ items }: { items: any }) => {
 }
 
 export const functionsMap = {
-  get_products,
-  get_product_details,
+  get_services,
+  get_service_details,
   get_orders,
   file_claim,
   create_return,

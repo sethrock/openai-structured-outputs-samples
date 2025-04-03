@@ -4,17 +4,17 @@
 
 export const toolsList = [
   {
-    name: 'get_products',
-    description: 'Fetch the list of available products',
+    name: 'get_services',
+    description: 'Fetch the list of available services',
     parameters: {}
   },
   {
-    name: 'get_product_details',
-    description: 'Fetch the details of a product',
+    name: 'get_service_details',
+    description: 'Fetch the details of a service',
     parameters: {
-      productId: {
+      serviceId: {
         type: 'string',
-        description: 'ID of the product to fetch details for'
+        description: 'ID of the service to fetch details for'
       }
     }
   },
