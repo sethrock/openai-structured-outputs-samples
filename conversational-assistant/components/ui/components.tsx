@@ -14,4 +14,4 @@ export const ProductImage = ({ primary_image, item_name }: ImageProps) => primar
           }}
         />
       </div>
-    )
+    ) : null;
