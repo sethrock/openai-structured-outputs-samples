@@ -60,8 +60,10 @@ const Chat: React.FC<ChatProps> = ({ items, onSendMessage }) => {
                       onKeyDown={e => {
                         if (e.key === 'Enter' && !e.shiftKey) {
                           e.preventDefault()
-                          onSendMessage(inputMessageText)
-                          setinputMessageText('')
+                          if (inputMessageText.trim()) {
+                            onSendMessage(inputMessageText.trim())
+                            setinputMessageText('')
+                          }
                         }
                       }}
                     />
