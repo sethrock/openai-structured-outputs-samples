@@ -136,10 +136,10 @@ export const ItemComponent = ({
   >
     <div className="absolute inset-0 bg-black bg-opacity-50"></div>
     <div className="relative z-10 flex flex-col items-center text-white">
-    <h3 className="text-lg font-semibold mb-2 text-white">{item_name}</h3>
-    <p className="text-sm text-gray-200 mb-2">{duration} Hour Service</p>
-    <p className="text-sm text-gray-100 mb-4 text-center">{description}</p>
-    <p className="text-lg font-bold text-white">${price}</p>
+    <h3 className="text-lg font-semibold mb-2">{item_name}</h3>
+    <p className="text-sm text-gray-600 mb-2">{duration} Hour Service</p>
+    <p className="text-sm text-gray-600 mb-4 text-center">{description}</p>
+    <p className="text-lg font-bold">${price}</p>
       <Button onClick={() => addToCart(id)} className="mt-4 bg-white text-black hover:bg-gray-200">
         Book Now
       </Button>
