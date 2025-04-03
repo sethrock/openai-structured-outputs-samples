@@ -117,7 +117,8 @@ export const ItemComponent = ({
   primary_image,
   description,
   price,
-  duration
+  duration,
+  video
 }: {
   id: string
   item_name: string
@@ -125,27 +126,63 @@ export const ItemComponent = ({
   description: string
   price: number
   duration?: number
-}) => (
-  <div 
-    className="flex flex-col items-center p-4 border rounded-lg w-72 min-w-72 h-[400px] relative overflow-hidden"
-    style={{
-      backgroundImage: `url(${primary_image || '/imgs/service.jpg'})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center'
-    }}
-  >
-    <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-    <div className="relative z-10 flex flex-col items-center text-white">
-    <h3 className="text-lg font-semibold mb-2">{item_name}</h3>
-    <p className="text-sm text-gray-600 mb-2">{duration} Hour Service</p>
-    <p className="text-sm text-gray-600 mb-4 text-center">{description}</p>
-    <p className="text-lg font-bold">${price}</p>
-      <Button onClick={() => addToCart(id)} className="mt-4 bg-white text-black hover:bg-gray-200">
-        Book Now
-      </Button>
+  video?: string
+}) => {
+  React.useEffect(() => {
+    if (video && typeof window !== 'undefined') {
+      const script = document.createElement('script');
+      script.src = 'https://player.cloudinary.com/v2.0/global/all.js';
+      script.async = true;
+      document.body.appendChild(script);
+
+      script.onload = () => {
+        const player = (window as any).cloudinary.videoPlayer('player', {
+          cloud_name: 'dq2wjozdk',
+          publicId: 'Naked_Sushi_-540p30_gxtv7r',
+          profile: 'lopping2'
+        });
+      };
+
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+  }, [video]);
+
+  return (
+    <div className="flex flex-col items-center p-4 border rounded-lg w-72 min-w-72 h-[400px] relative overflow-hidden">
+      {video ? (
+        <video
+          id="player"
+          className="absolute inset-0 w-full h-full object-cover"
+          controls
+          playsInline
+        />
+      ) : (
+        <>
+          <div 
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url(${primary_image || '/imgs/service.jpg'})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        </>
+      )}
+      <div className="relative z-10 flex flex-col items-center text-white">
+        <h3 className="text-lg font-semibold mb-2">{item_name}</h3>
+        <p className="text-sm text-gray-600 mb-2">{duration} Hour Service</p>
+        <p className="text-sm text-gray-600 mb-4 text-center">{description}</p>
+        <p className="text-lg font-bold">${price}</p>
+        <Button onClick={() => addToCart(id)} className="mt-4 bg-white text-black hover:bg-gray-200">
+          Book Now
+        </Button>
+      </div>
     </div>
-  </div>
-)
+  );
+}
 
 export const OrderComponent = ({ id, total, date, status, products }: any) => (
   <div className="flex flex-col gap-2 mb-3">
