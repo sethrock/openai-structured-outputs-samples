@@ -2,7 +2,7 @@
 // Define one function per tool call - each tool call should have a matching function
 // Parameters for a tool call are passed as an object to the corresponding function
 
-export const get_products = async () => {
+export const get_services = async () => {
   const response = await fetch('/api/tools/get_products', {
     method: 'GET',
     headers: {
@@ -13,13 +13,13 @@ export const get_products = async () => {
   return result
 }
 
-export const get_product_details = async ({
-  productId
+export const get_service_details = async ({
+  serviceId
 }: {
-  productId: string
+  serviceId: string
 }) => {
   const response = await fetch(
-    `/api/tools/get_product_details?productId=${productId}`,
+    `/api/tools/get_product_details?productId=${serviceId}`,
     {
       method: 'GET',
       headers: {
