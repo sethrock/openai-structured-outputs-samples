@@ -6,13 +6,12 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'res.cloudinary.com',
-        pathname: '/**',
+        pathname: '/dq2wjozdk/**',
       }
     ],
+    domains: ['res.cloudinary.com']
   },
-  // Required for Replit hosting
   output: 'standalone',
-  // Configure server
   webpack: (config) => {
     return config
   },
