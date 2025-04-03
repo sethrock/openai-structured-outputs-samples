@@ -1,4 +1,4 @@
-import { orders } from '@/config/data/demo-data'
+import { bookings as orders } from '@/config/data/demo-data'
 
 export async function GET() {
   try {
