@@ -33,7 +33,7 @@ const Assistant: React.FC = () => {
   }
 
   return (
-    <div className="h-full p-4 w-full rounded-t-2xl shadow-lg bg-gray-100">
+    <div className="h-full p-2 md:p-4 w-full rounded-t-2xl shadow-lg bg-gray-100">
       <Chat items={chatMessages} onSendMessage={handleSendMessage} />
     </div>
   )
