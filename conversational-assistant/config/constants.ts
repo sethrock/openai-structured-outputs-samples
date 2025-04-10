@@ -30,5 +30,5 @@ After you've displayed something, don't repeat what you displayed, just ask the 
 `
 // Initial message that will be displayed in the chat
 export const INITIAL_MESSAGE = `
-Hi, how can I assist you today? I can help you with anything related to your orders, or I can give you recommendations. Just tell me what you need!
+Hey there! I'm Sera's Assistant. Please spend 2 minuets with me and we can establish if you and Sera will be a good match. Ask me for recomendations. Ask me for anything! I'm here to help. Would you like me to start with service options for Sera?
 `
