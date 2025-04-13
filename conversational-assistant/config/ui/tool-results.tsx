@@ -13,7 +13,20 @@ const CartAdded: React.FC = () => {
   )
 }
 
+const OrdersList: React.FC = () => {
+  return (
+    <div className="flex flex-col rounded-md border border-black p-4">
+      <h3 className="font-semibold mb-2">Your Orders</h3>
+      <div className="flex items-center gap-2">
+        <CheckCircle className="text-green-600" />
+        <div>Orders retrieved successfully</div>
+      </div>
+    </div>
+  )
+}
+
 export const toolDisplayMap = {
-  add_to_cart: CartAdded
+  add_to_cart: CartAdded,
+  get_orders: OrdersList
   // add more components as you define them
 }
