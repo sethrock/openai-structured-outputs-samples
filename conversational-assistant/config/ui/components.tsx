@@ -128,8 +128,11 @@ export const ItemComponent = ({
   duration?: number
   video?: string
 }) => {
+  // Special case for 2 Hour Service (id: service-2hr)
+  const isSpecialService = id === 'service-2hr';
+  
   React.useEffect(() => {
-    if (video && typeof window !== 'undefined') {
+    if (video && typeof window !== 'undefined' && !isSpecialService) {
       const script = document.createElement('script');
       script.src = 'https://player.cloudinary.com/v2.0/global/all.js';
       script.async = true;
@@ -157,11 +160,22 @@ export const ItemComponent = ({
         document.body.removeChild(script);
       };
     }
-  }, [video]);
+  }, [video, isSpecialService]);
 
   return (
     <div className="flex flex-col items-center p-4 border rounded-lg w-72 min-w-72 h-[400px] relative overflow-hidden">
-      {video ? (
+      {isSpecialService ? (
+        <div className="absolute inset-0 w-full h-full">
+          <iframe
+            src="https://player.cloudinary.com/embed/?public_id=mojo_video_hhvcvk&cloud_name=dq2wjozdk"
+            style={{height: 'auto', width: '100%', aspectRatio: '640 / 360'}}
+            allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+            allowFullScreen
+            frameBorder="0"
+            className="absolute inset-0 w-full h-full"
+          ></iframe>
+        </div>
+      ) : video ? (
         <div className="absolute inset-0 w-full h-full">
           <video
             id="player"
