@@ -21,6 +21,7 @@ export const ProductImage = ({ primary_image, item_name }: ImageProps) => primar
 export const CarouselComponent = ({ children }: { children: any[] }) => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [isAnimating, setIsAnimating] = React.useState(false);
+  const videoRef = React.useRef<HTMLVideoElement | null>(null);
 
   const nextSlide = () => {
     if (!isAnimating) {
@@ -37,6 +38,18 @@ export const CarouselComponent = ({ children }: { children: any[] }) => {
       setTimeout(() => setIsAnimating(false), 500);
     }
   };
+  
+  // Auto-advance slides every 10 seconds if not a video slide
+  React.useEffect(() => {
+    // Check if current slide contains a video
+    const hasVideo = document.getElementById('player');
+    if (!hasVideo) {
+      const timer = setTimeout(() => {
+        nextSlide();
+      }, 10000);
+      return () => clearTimeout(timer);
+    }
+  }, [currentIndex]);
 
   return (
     <div className="relative w-full max-w-sm mx-auto">
@@ -48,7 +61,8 @@ export const CarouselComponent = ({ children }: { children: any[] }) => {
               className="w-full shrink-0 transition-all duration-500"
               style={{
                 transform: `translateX(-${currentIndex * 100}%)`,
-                opacity: index === currentIndex ? 1 : 0.3
+                opacity: index === currentIndex ? 1 : 0.3,
+                zIndex: index === currentIndex ? 10 : 1
               }}
             >
               {child}

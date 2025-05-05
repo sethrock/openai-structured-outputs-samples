@@ -137,10 +137,20 @@ export const ItemComponent = ({
 
       script.onload = () => {
         const player = (window as any).cloudinary.videoPlayer('player', {
-          cloud_name: 'dq2wjozdk',
-          publicId: 'Naked_Sushi_-540p30_gxtv7r',
-          profile: 'lopping2'
+          cloudName: 'dq2wjozdk',
+          fluid: true,
+          controls: true,
+          muted: true,
+          posterOptions: {
+            transformation: {
+              startOffset: 4
+            }
+          },
+          autoplay: true,
+          loop: true
         });
+        
+        player.source('mojo_video_hhvcvk');
       };
 
       return () => {
@@ -152,12 +162,13 @@ export const ItemComponent = ({
   return (
     <div className="flex flex-col items-center p-4 border rounded-lg w-72 min-w-72 h-[400px] relative overflow-hidden">
       {video ? (
-        <video
-          id="player"
-          className="absolute inset-0 w-full h-full object-cover"
-          controls
-          playsInline
-        />
+        <div className="absolute inset-0 w-full h-full">
+          <video
+            id="player"
+            className="w-full h-full object-cover"
+            playsInline
+          />
+        </div>
       ) : (
         <>
           <div 
